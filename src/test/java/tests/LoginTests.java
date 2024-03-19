@@ -7,9 +7,9 @@ public class LoginTests extends TestBase{
 
     @Test
     public void loginPositiveTest(){
-        String email = "krasleo@gmail.com";
-        String password = "messi2468";
-        app.getHelperUser().login(email,password);
+//        String email = "krasleo@gmail.com";
+//        String password = "messi2468";
+        app.getHelperUser().login(user.getEmail(),user.getPassword());
         Assert.assertTrue(app.getHelperUser().isElementPresent_btnAccount());
 
     }
