@@ -1,5 +1,6 @@
 package manager;
 
+import models.BoardDto;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -19,12 +20,41 @@ public class HelperBoards extends HelperBase{
 
     By btnCloseCreateBoardForm = By.cssSelector("button[data-testid='popover-close']");
 
+    //=================================================================================
 
-    public void createNewBoard(String boardTitle) {
+    By btnDots = By.cssSelector("button[aria-label='Show menu']");
+
+    By btnCloseBoard = By.cssSelector
+            ("a[class='board-menu-navigation-item-link board-menu-navigation-item-link-v2 js-close-board']");
+
+    By btnCloseSubmit = By.cssSelector("input[value='Close']");
+
+    By btnDeleteBoard = By.cssSelector("button[data-testid='close-board-delete-board-button']");
+
+    By btnDeleteConfirm = By.cssSelector("button[data-testid='close-board-delete-board-confirm-button']");
+
+
+
+
+    public void createNewBoard(BoardDto boardDto) {
         clickBase(btnCreateNewBoard);
-        typeBase(inputBoardTitle,boardTitle);
+        typeBase(inputBoardTitle, boardDto.getBoardTitle());
         pause(3);
         clickBase(btnCreateSubmit);
+    }
+
+    public void deleteBoard(BoardDto boardDto){
+        clickBoardTitle(boardDto.getBoardTitle());
+        clickBase(btnDots);
+        clickBase(btnCloseBoard);
+        clickBase(btnCloseSubmit);
+        clickBase(btnDeleteBoard);
+        clickBase(btnDeleteConfirm);
+    }
+
+    private void clickBoardTitle(String boardTitle) {
+        String xPathBoardTitle = "//div[@title='"+boardTitle+"']";
+        clickBase(By.xpath(xPathBoardTitle));
     }
 
     public boolean isTextInElementEquals_boardTitle(String text) {
