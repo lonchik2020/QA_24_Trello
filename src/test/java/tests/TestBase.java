@@ -15,7 +15,7 @@ public class TestBase {
 
     @BeforeSuite
     public void setup(){
-        logger.info("login with email" +user.getEmail()+ "---> password---->" + user.getPassword());
+        logger.info(" login with email----> " + user.getEmail()+ " password----> " + user.getPassword());
         app.init();
     }
 

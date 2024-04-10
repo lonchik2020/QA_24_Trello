@@ -1,11 +1,14 @@
 package tests;
 
+import manager.TestNGListener;
 import models.BoardDto;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
 import java.lang.reflect.Method;
 import java.util.Random;
+
+@Listeners(TestNGListener.class)
 
 public class BoardsTests extends TestBase {
     @BeforeClass
@@ -45,7 +48,8 @@ public class BoardsTests extends TestBase {
         app.getHelperBoards().createNewBoard(boardDto);
         app.getHelperBoards().clickBtnBtnBoards();
         app.getHelperBoards().deleteBoard(boardDto);
-        //Assert.assertTrue(); create method isText with wait
+        Assert.assertTrue(app.getHelperBoards()
+                .textToBePresentInElement_BoardDeleted("Board deleted.", 5));
     }
 
 //    @AfterMethod

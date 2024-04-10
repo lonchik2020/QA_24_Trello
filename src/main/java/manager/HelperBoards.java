@@ -4,10 +4,11 @@ import models.BoardDto;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class HelperBoards extends HelperBase{
+public class HelperBoards extends HelperBase {
     public HelperBoards(WebDriver driver) {
         super(driver);
     }
+
     By btnCreateNewBoard = By.cssSelector("li[data-testid='create-board-tile']");
 
     By inputBoardTitle = By.cssSelector("input[data-testid='create-board-title-input']");
@@ -33,19 +34,24 @@ public class HelperBoards extends HelperBase{
 
     By btnDeleteConfirm = By.cssSelector("button[data-testid='close-board-delete-board-confirm-button']");
 
+    //======================================================================================
 
+    By popUpBoardDeleted = By.cssSelector("span[class='QMKgZFIlTLiEJN']");
 
 
     public void createNewBoard(BoardDto boardDto) {
         clickBase(btnCreateNewBoard);
         typeBase(inputBoardTitle, boardDto.getBoardTitle());
-        pause(3);
-        clickBase(btnCreateSubmit);
+//        pause(3);
+//        clickBase(btnCreateSubmit);
+        clickBaseWait(btnCreateSubmit, 5);
     }
 
-    public void deleteBoard(BoardDto boardDto){
+    public void deleteBoard(BoardDto boardDto) {
         clickBoardTitle(boardDto.getBoardTitle());
-        clickBase(btnDots);
+        //pause(3);
+        //clickBase(btnDots);
+        clickBaseWait(btnDots, 5);
         clickBase(btnCloseBoard);
         clickBase(btnCloseSubmit);
         clickBase(btnDeleteBoard);
@@ -53,7 +59,7 @@ public class HelperBoards extends HelperBase{
     }
 
     private void clickBoardTitle(String boardTitle) {
-        String xPathBoardTitle = "//div[@title='"+boardTitle+"']";
+        String xPathBoardTitle = "//div[@title='" + boardTitle + "']";
         clickBase(By.xpath(xPathBoardTitle));
     }
 
@@ -61,19 +67,24 @@ public class HelperBoards extends HelperBase{
         return isTextInElementEquals(boardTitle, text);
     }
 
-    public void clickBtnBtnBoards(){
+    public void clickBtnBtnBoards() {
         clickBase(btnBoards);
     }
 
-    public void clickBtnCloseCreateBoardForm(){
+    public void clickBtnCloseCreateBoardForm() {
         clickBase(btnCloseCreateBoardForm);
     }
 
-    public boolean isElementPresent_inputBoardTitle(){
+    public boolean isElementPresent_inputBoardTitle() {
         return isElementPresent(inputBoardTitle);
     }
 
     public boolean isElementPresent_boardTitle() {
-       return isElementPresent(boardTitle);
+        return isElementPresent(boardTitle);
     }
+
+    public boolean textToBePresentInElement_BoardDeleted(String text, int time){
+        return textToBePresentInElement(popUpBoardDeleted, text, time);
+    }
+
 }
