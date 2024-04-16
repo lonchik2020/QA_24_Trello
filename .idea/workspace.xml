@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60b48d2b-d0bb-4e7b-8e0e-47c6b8db9a79" name="Changes" comment="added project" />
+    <list default="true" id="60b48d2b-d0bb-4e7b-8e0e-47c6b8db9a79" name="Changes" comment="added project">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,15 +56,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/JavaProjects/QA_24/QA24_PhoneBook&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/JavaProjects/QA_24/QA_24_Trello",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Gradle.BoardsTests.deleteBoardPositiveTest">
     <configuration name="BoardsTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -187,9 +189,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.BoardsTests.deleteBoardPositiveTest" />
+        <item itemvalue="Gradle.BoardsTests.createNewBoardNegativeTest_EmptyBoardTitle" />
         <item itemvalue="Gradle.BoardsTests.createNewBoardPositiveTest" />
         <item itemvalue="Gradle.BoardsTests" />
-        <item itemvalue="Gradle.BoardsTests.createNewBoardNegativeTest_EmptyBoardTitle" />
         <item itemvalue="Gradle.LoginTests.loginPositiveTest" />
       </list>
     </recent_temporary>
