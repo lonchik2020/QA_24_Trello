@@ -13,14 +13,15 @@ public class TestBase {
 
     UserDto user = new UserDto("krasleo@gmail.com", "messi2468");
 
-    @BeforeSuite
+    @BeforeSuite(alwaysRun = true)
     public void setup(){
         logger.info(" login with email----> " + user.getEmail()+ " password----> " + user.getPassword());
         app.init();
+        app.getHelperUser().login(user.getEmail(), user.getPassword());
     }
 
 
-    @AfterSuite
+    @AfterSuite(alwaysRun = true)
     public void tearDown(){
         app.stop();
     }

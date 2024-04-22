@@ -43,7 +43,7 @@ public class HelperBoards extends HelperBase {
         clickBase(btnCreateNewBoard);
         typeBase(inputBoardTitle, boardDto.getBoardTitle());
 //        pause(3);
-//        clickBase(btnCreateSubmit);
+        //clickBase(btnCreateSubmit);
         clickBaseWait(btnCreateSubmit, 5);
     }
 
@@ -51,7 +51,7 @@ public class HelperBoards extends HelperBase {
         clickBoardTitle(boardDto.getBoardTitle());
         //pause(3);
         //clickBase(btnDots);
-        clickBaseWait(btnDots, 5);
+        clickBaseWait(btnDots, 10);
         clickBase(btnCloseBoard);
         clickBase(btnCloseSubmit);
         clickBase(btnDeleteBoard);
@@ -59,8 +59,9 @@ public class HelperBoards extends HelperBase {
     }
 
     private void clickBoardTitle(String boardTitle) {
-        String xPathBoardTitle = "//div[@title='" + boardTitle + "']";
-        clickBase(By.xpath(xPathBoardTitle));
+        String xPathBoardTitle = "//div[@title='"+boardTitle+"']";
+        //clickBase(By.xpath(xPathBoardTitle));
+        clickBaseWait(By.xpath(xPathBoardTitle), 10);
     }
 
     public boolean isTextInElementEquals_boardTitle(String text) {
