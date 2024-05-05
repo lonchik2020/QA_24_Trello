@@ -9,6 +9,7 @@ public class HelperUser extends HelperBase{
     }
 
     By btnLogin = By.cssSelector("a[data-uuid='MJFtCCgVhXrVl7v9HA7EH_login']");
+
     By inputLogin = By.id("username");
 
     By btnContinue = By.id("login-submit");
