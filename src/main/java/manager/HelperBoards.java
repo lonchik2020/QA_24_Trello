@@ -51,7 +51,7 @@ public class HelperBoards extends HelperBase {
         clickBoardTitle(boardDto.getBoardTitle());
         //pause(3);
         //clickBase(btnDots);
-        clickBaseWait(btnDots, 10);
+        clickBaseWait(btnDots, 5);
         clickBase(btnCloseBoard);
         clickBase(btnCloseSubmit);
         clickBase(btnDeleteBoard);
